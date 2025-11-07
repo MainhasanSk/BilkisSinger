@@ -32,62 +32,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(212, 175, 55, 0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-
         /* Hero Section */
         .hero {
             position: relative;
@@ -97,7 +41,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            margin-top: 60px;
         }
 
         .hero-video {
@@ -784,22 +727,18 @@
             font-size: 1.8rem;
         }
 
+        .highlight-name {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
             .hero {
                 height: 80vh;
-                margin-top: 100px;
             }
 
             .profile-picture {
@@ -839,29 +778,9 @@
                 font-size: 1.3rem;
             }
         }
-        .highlight-name {
-    color: var(--gold);
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
-
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#home" class="logo">🎤 BILKIS INAM</a>
-        <ul class="nav-links">
-            <li><a href="#profile">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#youtube">Videos</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
-    </nav>
-
     <!-- Hero Section -->
     <section class="hero" id="home">
         <iframe class="hero-video" 
@@ -898,9 +817,9 @@
     <section class="about" id="about">
         <h2>About Me</h2>
         <div class="about-content">
-             <p class="about-text">
-        Bilkis Inam is a young, soulful singer from Assam who has captured hearts with her charming voice and energetic performances. She has performed alongside legendary artist <span class="highlight-name">Zubeen Garg</span> and continues to inspire music lovers with her versatility and charisma on stage. With a passion for Assamese, Goalpariya, Bengali, and Urdu music, Bilkis brings a unique blend of tradition and contemporary flair to every performance. Her contributions span across various music genres, making her one of the most promising artists of her generation.
-    </p>
+            <p class="about-text">
+                Bilkis Inam is a young, soulful singer from Assam who has captured hearts with her charming voice and energetic performances. She has performed alongside legendary artist <span class="highlight-name">Zubeen Garg</span> and continues to inspire music lovers with her versatility and charisma on stage. With a passion for Assamese, Goalpariya, Bengali, and Urdu music, Bilkis brings a unique blend of tradition and contemporary flair to every performance. Her contributions span across various music genres, making her one of the most promising artists of her generation.
+            </p>
 
             <div class="about-highlights">
                 <div class="highlight-item">
@@ -988,7 +907,7 @@
             </a>
         </div>
 
-                 <div class="videos-grid">
+        <div class="videos-grid">
             <div class="video-item">
                 <iframe src="https://www.youtube.com/embed/Sd69C-cK9OE" frameborder="0" allowfullscreen allow="autoplay"></iframe>
             </div>
@@ -999,7 +918,6 @@
                 <iframe src="https://www.youtube.com/embed/jx3ocnjq99o" frameborder="0" allowfullscreen allow="autoplay"></iframe>
             </div>
         </div>
-
 
         <!-- Social Media Section -->
         <div class="social-section">
@@ -1015,11 +933,10 @@
                     <i class="fab fa-youtube"></i>
                 </a>
                 <a href="https://x.com/bilkisinam" target="_blank" class="social-icon" title="X (Twitter)">
-                     <i class="fab fa-twitter"></i>
+                    <i class="fab fa-brands fa-x-twitter"></i>
                 </a>
             </div>
         </div>
-
     </section>
 
     <!-- Contact Section -->
@@ -1078,7 +995,7 @@
                 <i class="fab fa-youtube"></i>
             </a>
             <a href="https://x.com/bilkisinam" target="_blank" class="social-icon" title="X (Twitter)">
-                <i class="fab fa-x-twitter"></i>
+                <i class="fab fa-brands fa-x-twitter"></i>
             </a>
         </div>
         <p>© 2025 Bilkis Inam | All Rights Reserved.</p>
@@ -1155,30 +1072,6 @@
                 document.getElementById('successMessage').classList.remove('show');
                 closeBookingModal();
             }, 3000);
-        }
-
-        // Theme Toggle
-        let isDarkMode = true;
-
-        function toggleTheme() {
-            isDarkMode = !isDarkMode;
-            const root = document.documentElement;
-            
-            if (isDarkMode) {
-                root.style.setProperty('--gold', '#D4AF37');
-                root.style.setProperty('--purple', '#2D1B4E');
-                root.style.setProperty('--black', '#0F0F0F');
-                root.style.setProperty('--white', '#FFFFFF');
-                root.style.setProperty('--dark-gray', '#1A1A1A');
-                document.querySelector('.theme-toggle').textContent = '🌙 Dark Mode';
-            } else {
-                root.style.setProperty('--gold', '#8B4513');
-                root.style.setProperty('--purple', '#E8D5C4');
-                root.style.setProperty('--black', '#FFFFFF');
-                root.style.setProperty('--white', '#333333');
-                root.style.setProperty('--dark-gray', '#F5F5F5');
-                document.querySelector('.theme-toggle').textContent = '☀️ Light Mode';
-            }
         }
 
         // Smooth Scroll Helper
